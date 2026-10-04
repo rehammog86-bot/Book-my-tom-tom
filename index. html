@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book My Tom Tom</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #222;
+}
+
+header {
+  background: #111827;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+header p {
+  margin-top: 6px;
+}
+
+.hero {
+  background: #ffd21c;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 17px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 25px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-bottom: 18px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.price {
+  background: #f3f4f6;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 0 18px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #16a34a;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.info {
+  margin-top: 25px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+footer {
+  margin-top: 30px;
+  padding: 20px;
+  background: #111827;
+  color: white;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🚕 Book My Tom Tom</h1>
+  <p>Easy • Fast • Affordable</p>
+</header>
+
+<section class="hero">
+  <h2>Book Your Tom Tom</h2>
+  <p>Safe and reliable ride at your doorstep.</p>
+</section>
+
+<div class="container">
+
+  <div class="card">
+
+    <h2>📍 Booking Details</h2>
+
+    <input
+      type="text"
+      id="name"
+      placeholder="Your Name"
+    >
+
+    <input
+      type="tel"
+      id="phone"
+      placeholder="Your Mobile Number"
+    >
+
+    <input
+      type="text"
+      id="pickup"
+      placeholder="Pickup Location"
+    >
+
+    <input
+      type="text"
+      id="drop"
+      placeholder="Drop Location"
+    >
+
+    <select id="ride">
+      <option value="">Select Ride Type</option>
+      <option>Local Ride</option>
+      <option>Airport Ride</option>
+      <option>Outstation Ride</option>
+    </select>
+
+    <div class="price">
+      Starting Price: ₹50
+    </div>
+
+    <button onclick="bookRide()">
+      🚕 BOOK MY TOM TOM
+    </button>
+
+  </div>
+
+  <div class="info">
+    <h3>Why Book With Us?</h3>
+    <p>✅ Quick booking</p>
+    <p>✅ Affordable prices</p>
+    <p>✅ Direct driver connection</p>
+    <p>✅ Easy WhatsApp booking</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Book My Tom Tom
+</footer>
+
+<script>
+
+function bookRide() {
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let pickup = document.getElementById("pickup").value;
+  let drop = document.getElementById("drop").value;
+  let ride = document.getElementById("ride").value;
+
+  if (!name || !phone || !pickup || !drop || !ride) {
+    alert("Please fill all booking details.");
+    return;
+  }
+
+  let message =
+    "🚕 BOOK MY TOM TOM%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Pickup: " + pickup + "%0A" +
+    "Drop: " + drop + "%0A" +
+    "Ride: " + ride + "%0A%0A" +
+    "Please confirm my booking.";
+
+  /*
+   IMPORTANT:
+   Replace 91XXXXXXXXXX below
+   with your WhatsApp number.
+   
+   Example:
+   919876543210
+  */
+
+  let whatsappNumber = "91XXXXXXXXXX";
+
+  window.open(
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    message,
+    "_blank"
+  );
+}
+
+</script>
+
+</body>
+</html>
